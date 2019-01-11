@@ -8,13 +8,17 @@ object HexUtil {
 
   def toHex(bytes: Array[Byte]): String = bytes.map("%02X".format(_)).mkString
 
-  def hexStrToBytes(hex: String): Array[Byte] = {
-    new BigInteger(hex, 16).toByteArray
+  def toBytes(hex: String): Array[Byte] = new BigInteger(hex, 16).toByteArray
 
+  def isNotHex(hex: String): Boolean = hex.isEmpty || !(HEX_PATEN.r matches hex)
+
+  def isHex(hex: String): Boolean = !hex.isEmpty || (HEX_PATEN.r matches hex)
+
+  def printBytes(bytes: Array[Byte]): String = {
+    val hex = toHex(bytes);
+    println(hex)
+    hex
   }
 
-  def isNotHex(hex: String): Boolean = {
-    hex.isEmpty ^ !(HEX_PATEN.r matches hex)
-  }
 
 }
