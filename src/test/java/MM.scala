@@ -1,5 +1,3 @@
-package com.zing
-
 import com.zing.utils.ByteUtil._
 
 
