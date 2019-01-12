@@ -6,7 +6,9 @@ import com.zing.utils.RegexUtil._
 object HexUtil {
   val HEX_PATEN = "^(\\d|a|b|c|d|e|f|A|B|C|E|F)*?$"
 
-  def toHex(bytes: Array[Byte]): String = bytes.map("%02X".format(_)).mkString
+  def toHex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
+
+  def toHexUpCase(bytes: Array[Byte]): String = bytes.map("%02X".format(_)).mkString
 
   def toBytes(hex: String): Array[Byte] = new BigInteger(hex, 16).toByteArray
 
