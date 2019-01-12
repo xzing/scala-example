@@ -17,7 +17,7 @@ object HexUtil {
   def isHex(hex: String): Boolean = !hex.isEmpty || (HEX_PATEN.r matches hex)
 
   def printBytes(bytes: Array[Byte]): String = {
-    val hex = toHex(bytes);
+    val hex = toHex(bytes)
     println(hex)
     hex
   }
