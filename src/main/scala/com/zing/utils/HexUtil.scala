@@ -4,7 +4,7 @@ import java.math.BigInteger
 import com.zing.utils.RegexUtil._
 
 object HexUtil {
-  val HEX_PATEN = "^(\\d|a|b|c|d|e|f|A|B|C|E|F)*?$"
+  val HEX_PATEN = "^([0-9A-Fa-f]{2})+$"
 
   def toHex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
 
