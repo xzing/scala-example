@@ -1,5 +1,6 @@
 import com.zing.utils.HexUtil._
 
+
 object StringTests {
   //  split
   def main(args: Array[String]): Unit = {
@@ -38,10 +39,7 @@ object StringTests {
     println("fuck".r.replaceAllIn("fuck U U fucker", "****"))
     println("hate".r.replaceFirstIn("I hate U but I like her", "love"))
 
-
-
-
-
   }
+
 
 }
