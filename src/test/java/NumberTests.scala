@@ -60,6 +60,14 @@ object NumberTests {
     for (i <- 不){
       println(i)
     }
+
+    val pi = scala.math.Pi
+    println(f"$pi")
+    //小数点后5位
+    println(f"$pi%1.5f")
+
+    println(f"$pi%06.2f")
+    println(f"$pi%2.2f")
   }
 
 
