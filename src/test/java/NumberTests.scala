@@ -51,13 +51,13 @@ object NumberTests {
     //array
     val 啊 = 1 to 10
     println(啊)
-    for (i <- 啊){
+    for (i <- 啊) {
       println(i)
     }
 
     val 不 = 2 to 10 by 2
     println(不)
-    for (i <- 不){
+    for (i <- 不) {
       println(i)
     }
 
@@ -65,8 +65,9 @@ object NumberTests {
     println(f"$pi")
     //小数点后5位
     println(f"$pi%1.5f")
-
-    println(f"$pi%06.2f")
+    //至少7位，其中小数后2位，不足前方补0
+    println(f"$pi%07.2f")
+    //至少两位，其中小数点后2位
     println(f"$pi%2.2f")
   }
 
