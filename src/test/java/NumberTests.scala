@@ -19,6 +19,47 @@ object NumberTests {
 
 
     println(plus("1", "2"))
+
+    var x = 1;
+    x += 1
+    println(x)
+    x.+=(2)
+    println(x)
+
+    val a = 0.3;
+    val b = 0.1 + 0.2;
+    println(a == b)
+    println(a)
+    println(b)
+
+
+    val num = BigInt("2314123412341234123");
+    println(num + 1)
+    println(num.toLong)
+    //是否可以转成Int
+    println(num.isValidInt)
+
+    println(BigDecimal("48957329845.23948"))
+
+    //随机数
+    println(scala.util.Random.nextInt())
+    println(scala.util.Random.nextInt(50))
+    val seedRandom = new scala.util.Random(1000L)
+    println(seedRandom.nextInt())
+
+
+    //array
+    val 啊 = 1 to 10
+    println(啊)
+    for (i <- 啊){
+      println(i)
+    }
+
+    val 不 = 2 to 10 by 2
+    println(不)
+    for (i <- 不){
+      println(i)
+    }
   }
 
 
@@ -40,6 +81,7 @@ object NumberTests {
   //def plus(a: String, b: String): String = {
   //  a + b;
   //}
+
 
   implicit def toInt(s: String): Option[Int] = {
     try {
