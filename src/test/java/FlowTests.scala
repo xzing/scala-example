@@ -51,22 +51,23 @@ object FlowTests {
 
 
     //break  continue test
-
-
-    for (i <- 0 to 100) {
-      if (0 == i % 2) {
-        println(i)
-        break()
+    breakable {
+      for (i <- 0 to 100) {
+        if (0 == i % 2) {
+          println(i)
+          break
+        }
       }
     }
 
-    for (i <- 0 to 100) {
-      breakable( _ =>if (0 == i % 2) {
-        println(i)
-        break
-      }
-        )
 
+    for (i <- 0 to 100) {
+      breakable {
+        if (0 == i % 3) {
+          break
+        }
+        println(i)
+      }
     }
 
 
