@@ -1,5 +1,4 @@
-import scala.annotation.switch
-
+import scala.annotation.{switch, tailrec}
 import util.control.Breaks._
 
 object FlowTests {
@@ -63,10 +62,34 @@ object FlowTests {
 
     for (i <- 0 to 100) {
       breakable {
-        if (0 == i % 3) {
+        if (i.isNotPrime) {
           break
         }
-        println(i)
+        print(i+",")
+      }
+    }
+    println("")
+
+    implicit class IntUtil(i: Int) {
+      def isPrime: Boolean = {
+        i match {
+          case i if 1 > i => false
+          case 1 | 2 | 3 => true
+          case i => {
+            val half = i / 2
+            if (except(half)) false else true
+          }
+        }
+
+      }
+
+      def isNotPrime: Boolean = !isPrime
+
+      @tailrec
+      final def except(divisor: Int): Boolean = {
+        if (2 == divisor )  0 == i % divisor
+        else if (0 == i % divisor) true
+        else except(divisor - 1)
       }
     }
 
@@ -74,3 +97,5 @@ object FlowTests {
   }
 
 }
+
+
