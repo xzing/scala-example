@@ -65,10 +65,11 @@ object FlowTests {
         if (i.isNotPrime) {
           break
         }
-        print(i+",")
+        print(i + ",")
       }
     }
     println("")
+
 
     implicit class IntUtil(i: Int) {
       def isPrime: Boolean = {
@@ -87,13 +88,38 @@ object FlowTests {
 
       @tailrec
       final def except(divisor: Int): Boolean = {
-        if (2 == divisor )  0 == i % divisor
+        if (2 == divisor) 0 == i % divisor
         else if (0 == i % divisor) true
         else except(divisor - 1)
       }
     }
 
+    for (i <- 0 to 100) {
+      breakable {
+        i match {
+          case i if i < 1 => break
+          case 1 | 2 | 3 => print(i + ",")
+          case i if (canNotExcept(i)) => print(i + ",")
+          case _ => break
+        }
+      }
+    }
+    println("")
+  }
 
+  def canNotExcept(i: Int): Boolean = {
+    val half = i / 2
+
+    var flag = true;
+    breakable {
+      for (n <- 2 to half) {
+        if (0 == i % n) {
+          flag = false
+          break
+        }
+      }
+    }
+    flag
   }
 
 }
