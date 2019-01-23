@@ -1,3 +1,5 @@
+package demo02
+
 object ClassAndObjectTest {
 
   class Test01(name: String) {
@@ -44,4 +46,3 @@ object ClassAndObjectTest {
   }
 
 }
-
