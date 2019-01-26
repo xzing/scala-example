@@ -21,4 +21,11 @@ object MethodTest {
   def printAll(s: String*) = {
     s.foreach(println)
   }
+
+  /**
+    * '*'参数只能出现在方法的结尾
+    */
+  //def printAll( me:Any, s: String*, fuck:Int) = {
+  //  s.foreach(println)
+  //}
 }
