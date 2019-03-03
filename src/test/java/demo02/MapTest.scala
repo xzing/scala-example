@@ -42,6 +42,35 @@ object MapTest {
     mutableMap.mapValues(println(_))
     mutableMap.keys.map(println(_))
     mutableMap.values.map(println(_))
+
+    println(mutableMap.mkString("[", ",", "]"))
+
+
+    mutableMap.put(3, "hi")
+    println(mutableMap.mkString("[", ",", "]"))
+
+
+    println(mutableMap.mkString("========================"))
+
+    val nanana: collection.mutable.Map[String, Int] = collection.mutable.Map.empty[String, Int];
+    nanana.+=(("1", 1))
+    println(nanana.mkString("[", ",", "]"))
+
+    nanana.+=(("2", 2))
+    println(nanana.mkString("[", ",", "]"))
+
+    nanana.+=(("1", 2))
+    println(nanana.mkString("[", ",", "]"))
+
+    nanana.put("1", 3)
+    println(nanana.mkString("[", ",", "]"))
+
+    nanana.update("1", 4)
+    println(nanana.mkString("[", ",", "]"))
+
+
+
+
   }
 
 }
