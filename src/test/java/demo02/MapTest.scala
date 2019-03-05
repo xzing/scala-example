@@ -69,6 +69,12 @@ object MapTest {
     println(nanana.mkString("[", ",", "]"))
 
 
+    val retainMap = scala.collection.mutable.ListMap(1 -> "ka", 2 -> "ki", 3 -> "ku")
+
+    retainMap.filter {
+      case (k: Int, v: String) => k > 1
+    }.map(println)
+    println(retainMap.mkString("[", ",", "]"))
 
 
   }
