@@ -87,7 +87,7 @@ object MapTest {
         if (k > 1) {
           true
         } else {
-          retainMap.remove(k)
+          retainMap -= k
           false
         }
       }
