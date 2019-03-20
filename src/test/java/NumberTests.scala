@@ -1,3 +1,5 @@
+import java.math.BigInteger
+
 import scala.language.implicitConversions
 
 
@@ -6,6 +8,7 @@ object NumberTests {
   implicit def int2Str(a: Int): String = {
     a.toString
   }
+
 
   def main(args: Array[String]): Unit = {
 
@@ -69,6 +72,15 @@ object NumberTests {
     println(f"$pi%07.2f")
     //至少两位，其中小数点后2位
     println(f"$pi%2.2f")
+    println("---------------------")
+    //println(2&7)
+
+    bigIntegerTest()
+  }
+
+  def bigIntegerTest(): Unit = {
+    val mmmya = new BigInteger(0x100, 16);
+    println(mmmya.testBit(4))
   }
 
 
