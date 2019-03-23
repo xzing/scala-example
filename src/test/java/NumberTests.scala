@@ -10,6 +10,7 @@ object NumberTests {
   }
 
 
+
   def main(args: Array[String]): Unit = {
 
     println(1 + 2)
@@ -76,11 +77,26 @@ object NumberTests {
     //println(2&7)
 
     bigIntegerTest()
+
+    println("---------------------")
+    testBigValue()
+
   }
 
+  def testBigValue(): Unit = {
+    val mmmya = new BigInteger(0x110, 10);
+    println(mmmya.toString)
+
+  }
+
+
   def bigIntegerTest(): Unit = {
-    val mmmya = new BigInteger(0x100, 16);
-    println(mmmya.testBit(4))
+    val mmmya = new BigInteger(0x110, 10);
+
+    //查看2进制的时候到某一位（入参）的时候是不是1
+    println(mmmya.testBit(8))
+
+
   }
 
 
