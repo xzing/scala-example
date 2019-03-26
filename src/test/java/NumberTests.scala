@@ -1,5 +1,6 @@
 import java.math.BigInteger
 
+import scala.collection.mutable
 import scala.language.implicitConversions
 
 
@@ -8,7 +9,6 @@ object NumberTests {
   implicit def int2Str(a: Int): String = {
     a.toString
   }
-
 
 
   def main(args: Array[String]): Unit = {
@@ -81,6 +81,23 @@ object NumberTests {
     println("---------------------")
     testBigValue()
 
+
+    println("---------------------")
+    testStep()
+
+    println("_______________________")
+    testRandomStep()
+  }
+
+  def testStep(): Unit = {
+    val num = 54
+    val stepBits: BigInteger = new BigInteger(num, 10)
+    val mmmya = new BigInteger(0xA76BFE87, 10)
+    val stepRange = mmmya.mod(BigInteger.valueOf(stepBits.bitCount())).intValue()
+
+
+    println((num + stepRange) % stepBits.bitCount())
+
   }
 
   def testBigValue(): Unit = {
@@ -112,6 +129,35 @@ object NumberTests {
       }
       case _ => 0
     }
+  }
+
+  def testRandomStep(): Unit = {
+    val mmap = new mutable.HashMap[Int, Int]()
+    val num = Array(1, 20, 83, 34, 91, 46, 12, 45)
+    val indexs = num.sorted.map(s => {
+      println(s)
+      s
+    }).toList
+
+    val miner = 20
+    val self = 83
+
+    val (min, max) = if (self > miner) {
+      (miner, self)
+    } else {
+      (self, miner)
+    }
+
+    var step = 0;
+
+    for (index <- indexs) {
+      if (index >= min && index < max) {
+        step += 1
+      }
+    }
+
+
+    println(s"\n${step}")
   }
 
 
