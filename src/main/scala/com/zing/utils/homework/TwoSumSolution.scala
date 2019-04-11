@@ -10,7 +10,7 @@
   * 因为 nums[0] + nums[1] = 2 + 7 = 9
   * 所以返回 [0, 1]
   */
-object Solution {
+object TwoSumSolution {
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
     val index: Int = nums.size
     for (i: Int <- 0 until index - 1) {
