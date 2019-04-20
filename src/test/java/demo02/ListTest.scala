@@ -1,6 +1,6 @@
 package demo02
 
-import java.util.stream.Collectors
+import scala.collection.JavaConverters._
 
 object ListTest {
 
@@ -10,14 +10,19 @@ object ListTest {
     list.add(1)
     list.add(2)
     list.add(3)
+    list.add(3)
+    list.add(3)
+    list.add(3)
 
-    list.stream()
-      .filter((s: Int) => s >= 2)
-      .collect(Collectors.toList[Int]())
-      .stream()
-      .forEach(a => System.out.println(a))
+    //list.stream()
+    //  .filter((s: Int) => s >= 2)
+    //  .collect(Collectors.toList[Int]())
+    //  .stream()
+    //  .forEach(a => System.out.println(a))
 
     //println(ls2)
+
+    println(list.asScala.maxBy(f => f))
 
 
   }
