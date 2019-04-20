@@ -2,6 +2,7 @@ import java.math.BigInteger
 
 import scala.collection.mutable
 import scala.language.implicitConversions
+import scala.util.Random
 
 
 object NumberTests {
@@ -87,6 +88,9 @@ object NumberTests {
 
     println("_______________________")
     testRandomStep()
+
+    println("----------")
+    println(Random.nextInt(1))
   }
 
   def testStep(): Unit = {
