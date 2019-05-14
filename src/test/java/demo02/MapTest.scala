@@ -95,6 +95,17 @@ object MapTest {
 
     println(retainMap.mkString("[", ",", "]"))
 
+    val HooByUidMap: collection.mutable.Map[String, Array[Int]] = collection.mutable.Map.empty[String, Array[Int]];
+    println(">>>>>>>>>>>>")
+
+    HooByUidMap.put("a", Array(1, 2, 3))
+    HooByUidMap.put("a", Array(1, 2))
+    HooByUidMap.update("a", Array(1234))
+    HooByUidMap += (("a", Array(23, 4)))
+    HooByUidMap += (("a", Array(5, 6)))
+
+    HooByUidMap.values.foreach(f => f.foreach(println(_)))
+
 
   }
 
